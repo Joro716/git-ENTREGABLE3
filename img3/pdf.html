@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIT - ENTREGABLE 3: Gestió i Neteja de l'Historial</title>
+    <style>
+        /* Optimización para PDF e impresión */
+        @media print {
+            body { padding: 0; margin: 10mm; }
+            .section-block { border-bottom: 1px solid #eee; margin-bottom: 15px; }
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.4; 
+            color: #333; 
+            max-width: 800px; 
+            margin: auto; 
+            padding: 20px; 
+        }
+        
+        h1 { color: #2c3e50; border-bottom: 3px solid #e67e22; padding-bottom: 8px; text-align: center; margin-bottom: 15px; font-size: 1.8em; }
+        
+        /* Contenedor principal de cada sección: PROHIBIDO SEPARAR CONTENIDO */
+        .section-block {
+            page-break-inside: avoid; /* Obliga a que título + texto + imagen vayan juntos */
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        h2 { 
+            color: #d35400; 
+            margin-top: 0; /* Pegado al inicio del bloque */
+            margin-bottom: 8px;
+            border-left: 5px solid #e67e22; 
+            padding-left: 10px; 
+            font-size: 1.4em;
+        }
+        
+        p { margin-bottom: 8px; font-size: 0.95em; }
+
+        .info-box { background: #fdf2e9; border: 1px solid #fab1a0; padding: 12px; border-radius: 8px; margin-bottom: 15px; }
+        .integrantes { font-weight: bold; list-style-type: none; padding: 0; margin: 5px 0; }
+        
+        .screenshot-container { text-align: center; margin: 10px 0; }
+        
+        .screenshot { 
+            max-width: 100%; 
+            max-height: 320px; /* Reducido ligeramente para que el bloque 5 quepa mejor */
+            height: auto;
+            border: 1px solid #ccc; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 5px; 
+        }
+
+        .caption { display: block; margin-top: 5px; font-style: italic; color: #666; font-size: 0.85em; }
+        
+        code { background: #f4f4f4; border: 1px solid #ddd; padding: 1px 4px; border-radius: 3px; font-family: 'Courier New', monospace; color: #c0392b; }
+        .task-tag { font-size: 0.75em; background: #e67e22; color: white; padding: 2px 8px; border-radius: 10px; vertical-align: middle; margin-left: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>GIT - ENTREGABLE 3: Gestió de l'Historial</h1>
+    
+    <div class="info-box">
+        <p><strong>Asignatura:</strong> Digitalització aplicada als sectors productius</p>
+        <p><strong>Grup:</strong> Joel i Oriol - DAM1A</p>
+        <ul class="integrantes">
+            <li>Joel Romeu Miracle <span class="task-tag">Maintainer</span></li>
+            <li>Oriol Virgili <span class="task-tag">Contributor</span></li>
+        </ul>
+    </div>
+
+    <div class="section-block">
+        <h2>1. Gestió de Commits (Opció A: Revert)</h2>
+        <p>L'Oriol ha realitzat una reversió amb <code>git revert</code>, creant un nou commit que desfà canvis sense esborrar el registre.</p>
+        <div class="screenshot-container">
+            <img src="1-1-A.png" class="screenshot">
+            <span class="caption">CAPTURA 1: Execució de git revert (Oriol).</span>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2>2. Gestió de Commits (Opció B: Reset)</h2>
+        <p>En Joel ha fet servir <code>git reset --hard</code> per netejar la branca master tornant a un punt d'inici original.</p>
+        <div class="screenshot-container">
+            <img src="1-2-A.png" class="screenshot">
+            <span class="caption">CAPTURA 2: Estat del log abans i després del reset (Joel).</span>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2>3. Seguretat i .gitignore</h2>
+        <p>Configuració de <code>.gitignore</code> per ignorar fitxers sensibles com <code>passwords.txt</code>.</p>
+        <div class="screenshot-container">
+            <img src="2.png" class="screenshot">
+            <span class="caption">CAPTURA 3: Verificació de fitxers ignorats (Joel).</span>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2>4. Estat "Detached HEAD"</h2>
+        <p>Navegació per commits antics. L'Oriol ha provat de moure el punter HEAD i tornar a master de forma segura.</p>
+        <div class="screenshot-container">
+            <img src="3.png" class="screenshot">
+            <span class="caption">CAPTURA 4: Avís de Git sobre l'estat Detached HEAD (Oriol).</span>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2>5. Historial Gràfic Final</h2>
+        <p>Vista completa de l'arbre del projecte amb <code>git log --graph --all</code> on es veu la neteja final.</p>
+        <div class="screenshot-container">
+            <img src="4.png" class="screenshot">
+            <span class="caption">CAPTURA 5: Graf final amb tot l'historial del grup (Joel).</span>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2>📝 Conclusió</h2>
+        <p>Considerem que <strong>revert</strong> és millor per a treballs en grup i <strong>reset</strong> per a neteges locals ràpides.</p>
+    </div>
+
+</body>
+</html>
